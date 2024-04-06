@@ -1,5 +1,5 @@
 # Budget-Expense Tracker
-A simple personal expense tracker.
+
 # Created by: Kenslin Rohin
 
 ## Setup
@@ -7,3 +7,6 @@ A simple personal expense tracker.
 - `npm install`
 - `npm run build` 
 - `npm run start` 
+
+## Randomized URL from netlify
+https://expense-trackerapp-with-react.netlify.app/

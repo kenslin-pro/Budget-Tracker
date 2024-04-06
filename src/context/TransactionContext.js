@@ -1,24 +1,30 @@
-import { createContext } from "react";
-
-export const initialState = {
-  transactions: [
-    {
-      id: Math.floor(Math.random() * 100000000),
-      text: "Received",
-      amount: 50,
-    },
-    {
-      id: Math.floor(Math.random() * 100000000),
-      text: "Milk",
-      amount: -10,
-    },
-    {
-      id: Math.floor(Math.random() * 100000000),
-      text: "Bread",
-      amount: -20,
-    },
-  ],
-};
+import React, { createContext, useState } from "react";
 
 export const TransactionContext = createContext();
-export const TransactionDispatchContext = createContext();
+
+export const TransactionProvider = (props) => {
+
+    const [transactions, setTransactions] = useState([
+        {
+          id: 1,
+          description: "Salary",
+          amount: 300,
+        },
+        {
+          id: 2,
+          description: "Salary",
+          amount: 300,
+        },
+        {
+          id: 3,
+          description: "Bank Loan",
+          amount: -300,
+        },
+      ]);
+
+  return (
+    <TransactionContext.Provider value={[transactions,setTransactions]}>
+      {props.children}
+    </TransactionContext.Provider>
+  );
+};
